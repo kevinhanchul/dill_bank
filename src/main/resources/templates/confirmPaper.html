@@ -11,6 +11,28 @@
 확인서류3
 확인서류4
 확인서류5
-확인
+<input type="submit" value="확인" onclick="fn_abc()">
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+    function fn_abc(){
+       alert("확인완료11");
+
+       $.ajax({
+           url: "confirmPaperCtr",
+           type: "POST",
+           contentType: "application/json",
+           data: JSON.stringify({}),
+           success: function(result) {
+    <!--            $("#result").text(result.result);-->
+               alert("확인완료");
+           },
+           error: function(error) {
+               alert("Error: " + error.responseText);
+           }
+       });
+    }
+
+</script>
 </html>

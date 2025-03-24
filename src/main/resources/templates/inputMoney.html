@@ -8,7 +8,30 @@
 계좌번호
 금액
 총액
-확인
+<input type="submit" value="확인" onclick="fn_abc()">
 
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+    function fn_abc(){
+       alert("확인완료11");
+
+       $.ajax({
+           url: "inputMoneyCtr",
+           type: "POST",
+           contentType: "application/json",
+           data: JSON.stringify({}),
+           success: function(result) {
+    <!--            $("#result").text(result.result);-->
+               alert("확인완료");
+           },
+           error: function(error) {
+               alert("Error: " + error.responseText);
+           }
+       });
+    }
+
+</script>
+
 </html>
