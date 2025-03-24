@@ -1,5 +1,5 @@
 package com.example.demo.controller;
-import com.example.demo.service.SellSubwaySvc;
+import com.example.demo.service.OutputMoneySvc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,10 +12,10 @@ import java.util.Map;
 @RequestMapping("")
 public class OutputMoneyCtr {
     @Autowired
-    private SellSubwaySvc sellSubwaySvc;
+    private OutputMoneySvc outputMoneySvc;
 
-    @PostMapping("sellsubwayctr")
-    public void sellsubwayctr(@RequestBody Map<String, Object> paraMap){
-        sellSubwaySvc.sellSubway(paraMap);
+    @PostMapping("outputMoneyCtr")
+    public void outputMoney(@RequestBody Map<String, Object> paraMap){
+        outputMoneySvc.outputMoney();
     }
 }

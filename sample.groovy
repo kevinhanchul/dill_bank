@@ -72,7 +72,7 @@ makeAccountMap
 menuMap
 outputMoneyMap
 
-        ======================
+======================
 
         sellSubway.html
 
@@ -149,8 +149,8 @@ sellSubwayMap.xml
         <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
         <mapper namespace="com.example.demo.dao.SellSubwayDao">
         <insert id="sellSubway" parameterType="java.util.Map">
-        INSERT INTO ch_test1 (col1, col2, col3) VALUES (#{userId}, #{rideArea}, #{subWayFee})
-<!--        INSERT INTO ch_test1 (col1, col2, col3) VALUES (1, 2, 3)-->
+//        INSERT INTO ch_test1 (col1, col2, col3) VALUES (#{userId}, #{rideArea}, #{subWayFee})
+        INSERT INTO ch_test1 (col1, col2, col3) VALUES (1, 2, 3)
         </insert>
 </mapper>
 
@@ -190,6 +190,7 @@ public class SellSubwaySvc {
 //    public void sellSubway(Map<String, Object> paraMap){
 //        sellSubwayDao.sellSubway(paraMap);
 //    }
+
     @Autowired
     private SellSubwayDao sellSubwayDao;
 
@@ -223,8 +224,16 @@ public class SellSubwayCtr {
 
     @PostMapping("sellsubwayctr")
     public void sellsubwayctr(@RequestBody Map<String, Object> paraMap){
-        sellSubwaySvc.sellSubway(paraMap);
+        sellSubwaySvc.sellSubway();
     }
+
+
+//    @PostMapping("sellsubwayctr")
+//    public void sellsubwayctr(@RequestBody Map<String, Object> paraMap){
+//        sellSubwaySvc.sellSubway(paraMap);
+//    }
+
+
 }
 
 
