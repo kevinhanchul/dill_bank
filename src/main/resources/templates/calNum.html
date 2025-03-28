@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+숫자1
+<select id="numNo1">
+<option>1</option>
+<option>2</option>
+</select>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+$(function(){
+    fn_abc();
+});
+
+function fn_abc(){
+
+$.ajax({
+    url: "calNumCtr",
+    type: "POST",
+    contentType: "application/json",
+    data: JSON.stringify({}),
+    success: function(result) {
+        <!--            $("#result").text(result.result);-->
+    },
+    error: function(error) {
+        alert("Error: " + error.responseText);
+    }
+});
+}
+</html>
